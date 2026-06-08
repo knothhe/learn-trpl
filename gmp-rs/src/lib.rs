@@ -32,6 +32,9 @@ impl Bigint {
                 self.digits[index] = sum;
                 carry = 0;
             }
+            // or, use % and /
+            // self.digits[index] = sum % BIGINT_BASE;
+            // carry = sum / BIGINT_BASE;
         }
 
         if self.digits.len() < other.digits.len() {
