@@ -25,6 +25,7 @@ impl Bigint {
         for index in 0..common_len {
             let sum = self.digits[index] + other.digits[index] + carry;
             if sum >= BIGINT_BASE {
+                // in this scene, sum - BIGINT_BASE equals to sum % BIGINT_BASE
                 self.digits[index] = sum - BIGINT_BASE;
                 carry = 1;
             } else {
